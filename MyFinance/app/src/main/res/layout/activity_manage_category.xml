@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 공통 헤더 -->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/header"/>
+
+    <!-- New Category 입력 폼 -->
+    <EditText
+        android:id="@+id/etCatName"
+        android:hint="New Category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"/>
+
+    <!-- Add Category 버튼 -->
+    <Button
+        android:id="@+id/btnAddCat"
+        style="@style/Widget.MaterialComponents.Button"
+        app:backgroundTint="@android:color/holo_green_dark"
+        android:textColor="@android:color/white"
+        android:text="ADD CATEGORY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"/>
+
+    <!-- 카테고리 리스트뷰 -->
+    <ListView
+        android:id="@+id/lvCats"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="16dp"/>
+
+    <!-- 공통 푸터 -->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/footer"/>
+
+</LinearLayout>

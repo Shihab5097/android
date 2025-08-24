@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 상단 헤더 include -->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/header" />
+
+    <!-- 중간 컨텐츠: Spinners + Table + Buttons -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Month Spinner -->
+        <Spinner
+            android:id="@+id/spMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Year Spinner -->
+        <Spinner
+            android:id="@+id/spYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Report Table -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp">
+
+            <TableLayout
+                android:id="@+id/tableReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <!-- Header Row: yellow bg, bold black text -->
+                <TableRow
+                    android:background="#FFFF00"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Date"
+                        android:textStyle="bold"
+                        android:textColor="#000000"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Category"
+                        android:textStyle="bold"
+                        android:textColor="#000000"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Amount"
+                        android:textStyle="bold"
+                        android:textColor="#000000"/>
+                </TableRow>
+
+                <!-- Java 코드에서 여기에 데이터를 동적으로 추가합니다 -->
+
+            </TableLayout>
+        </ScrollView>
+
+        <!-- 네비게이션 버튼들 -->
+        <Button
+            android:id="@+id/btnManageCategories"
+            style="@style/Widget.MaterialComponents.Button"
+            app:backgroundTint="@android:color/holo_green_dark"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Manage Categories"/>
+
+        <Button
+            android:id="@+id/btnAddExpense"
+            style="@style/Widget.MaterialComponents.Button"
+            app:backgroundTint="@android:color/holo_green_dark"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Add Expense"/>
+
+        <Button
+            android:id="@+id/btnCategoryBreakdown"
+            style="@style/Widget.MaterialComponents.Button"
+            app:backgroundTint="@android:color/holo_green_dark"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Category Breakdown"/>
+
+        <Button
+            android:id="@+id/btnUpdateExpense"
+            style="@style/Widget.MaterialComponents.Button"
+            app:backgroundTint="@android:color/holo_green_dark"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Update/Delete Expense"/>
+
+    </LinearLayout>
+
+    <!-- 하단 풋터 include -->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/footer" />
+
+</LinearLayout>
